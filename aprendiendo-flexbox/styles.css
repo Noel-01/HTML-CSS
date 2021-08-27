@@ -7,19 +7,36 @@ body {
 #layout {
     display: flex; /* ancho 100% */
     /*display: inline-flex; /* ancho automatico, se adaptan al espacio los elementos internas*/
-    flex-direction: row; /* columnas filas y direcceiones*/
-    flex-wrap: wrap; /* Para colocar los elementos de dentro y que no se salga de la caja principal */
+    /*flex-direction: row; /* columnas filas y direcceiones*/
+    /*flex-wrap: wrap; /* Para colocar los elementos de dentro y que no se salga de la caja principal */
 
     flex-flow: row wrap; /* hace lo mismo que las dos lineas de arriba pero en una */
+
+    /* ALINEACIÓN HORIZONTAL */
+    /* justify-content: flex-start; /*el contenido se pone en la izquierda */
+    /* justify-content: left; /*el contenido se pone en la izquierda */
+    /* justify-content: flex-end; /*el contenido se va a la derecha */
+    /* justify-content: right; /*el contenido se va a la derecha */
+    /* justify-content: center; /*el contenido se pone en el centro*/
+    /* justify-content: space-around; /*deja un espacio entre las cajas*/
+    /* justify-content: space-between; /*deja un espacio entre las cajas y la primera y ultima caja están pegadas al los lados*/
+    justify-content: space-evenly; /* centrado y espaciado entre elementos, parecido al around*/
+
+    height: 600px;
+    /* ALINEACIÓN VERTICAL */
+    /* align-items: baseline; /* se ajusta la altura al tamaño de las cajas */
+    /* align-items: center; /* se ajusta verticalmente en el centro */
+    /* align-items: flex-end; /* se ajusta abajo */
+    align-items: flex-start; /* se ajusta arriba */
 
     border: 3px solid black;
     padding: 5px;
 }
 
 .caja {
-    flex-grow: 1; /*Para adaptar el tamaño de la caja automaticamente cuando se reduce o amplia la caja*/
+    /*flex-grow: 1; /*Para adaptar el tamaño de la caja automaticamente cuando se reduce o amplia la caja*/
 
-    flex-basis: calc((100% / 3) - 68px); /*En vez de usar with*/ /*Un ancho base, tamaño minimo*/ /*calc hace calculos, sumas, divisiones...*/
+    /*flex-basis: calc((100% / 3) - 68px); /*En vez de usar with*/ /*Un ancho base, tamaño minimo*/ /*calc hace calculos, sumas, divisiones...*/
     font-size: 20px;
     font-weight: bold;
     text-align: center;
@@ -31,24 +48,27 @@ body {
 }
 
 .red {
-
+    align-self: flex-start; /* alinear verticalmente un elemento */
     /*flex-grow: 25; /*se puede especificar para una caja en concreto y dependiendo del numero ocupa un tamaño u otro*/
     background: red;
 }
 
 .green {
+    margin-top: 10%;
     /*flex-grow: 7;*/
     background: green;
 }
 
 .blue {
+    align-self: center;
     /*flex-grow: 0;*/
     /*flex-shrink: 7; /*Para reducir el tamaño de una caja*/
     background: blue;
 }
 
 .orange {
-    flex-basis: 100%;
+    align-self: flex-end;
+    /*flex-basis: 100%;*/
     /*flex-grow: 7;*/
     background: orange;
 }
