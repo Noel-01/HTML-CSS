@@ -17,6 +17,9 @@ body {
 }
 
 .caja {
+    flex-grow: 1; /*Para adaptar el tamaño de la caja automaticamente cuando se reduce o amplia la caja*/
+
+    flex-basis: calc((100% / 3) - 68px); /*En vez de usar with*/ /*Un ancho base, tamaño minimo*/ /*calc hace calculos, sumas, divisiones...*/
     font-size: 20px;
     font-weight: bold;
     text-align: center;
@@ -28,21 +31,24 @@ body {
 }
 
 .red {
-    order: 4;
+
+    /*flex-grow: 25; /*se puede especificar para una caja en concreto y dependiendo del numero ocupa un tamaño u otro*/
     background: red;
 }
 
 .green {
-    order: 2;
+    /*flex-grow: 7;*/
     background: green;
 }
 
 .blue {
-    order: 1;
+    /*flex-grow: 0;*/
+    /*flex-shrink: 7; /*Para reducir el tamaño de una caja*/
     background: blue;
 }
 
 .orange {
-    order: 3;
+    flex-basis: 100%;
+    /*flex-grow: 7;*/
     background: orange;
 }
